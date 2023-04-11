@@ -1,6 +1,6 @@
 import string
 from PIL import Image
-
+# you may need to install Pillow - pip install Pillow but use line above to import it
 IMG_SIZE = 150
 
 
@@ -19,12 +19,12 @@ def scatter_pixels(img_file):
     black_pels = [(x, y) for x in range(w) for y in range(w)
                   if pels[x, y] == 0]
     sqside = 3.0
-    
+
     # invert Y coordinate with w-y
-    return [t[0] for t in black_pels],[w - t[1] for t in black_pels]
+    return [t[0] for t in black_pels], [w - t[1] for t in black_pels]
 
 
-def pack_data(x,y):
+def pack_data(x, y):
     """
     pack 2d data to 1d vector
     """
@@ -32,9 +32,10 @@ def pack_data(x,y):
     for i in range(len(x)):
         one_d_data.append(x[i])
         one_d_data.append(y[i])
-        
+
     return one_d_data
-        
+
+
 def unpack_1d_data(one_d_data):
     """
     unpack 1d data to 2d vector
@@ -42,10 +43,8 @@ def unpack_1d_data(one_d_data):
     x = []
     y = []
     for i in range(len(one_d_data)):
-        if i%2==0:
+        if i % 2 == 0:
             x.append(one_d_data[i])
         else:
             y.append(one_d_data[i])
-    return x,y
-
-
+    return x, y

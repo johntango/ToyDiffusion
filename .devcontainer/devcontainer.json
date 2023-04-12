@@ -2,6 +2,9 @@
 	"name": "Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+	"hostRequirements": {
+	    "cpus": 4
+	  },
     	"waitFor": "onCreateCommand",
     	"updateContentCommand": "python3 -m pip install -r requirements.txt",
     	"postCreateCommand": "",
